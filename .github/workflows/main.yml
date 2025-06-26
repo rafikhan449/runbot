@@ -31,4 +31,4 @@ jobs:
       run: npm test
 
     - name: Start app (optional)
-      run: npm start
+      run: node index.js
