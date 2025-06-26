@@ -35,7 +35,7 @@ axios.get('https://raw.githubusercontent.com/ANIK-404NotFound/Anik/main/API.json
 axios.get('https://raw.githubusercontent.com/ANIK-404NotFound/Anik/main/owner.json')
 .then(res => {
 // true + res.data.owner === config.owner && res.data.author === config.author && res.data.version === config.version
-    if(true) {
+    if(res.data.owner === config.owner && res.data.author === config.author && res.data.version === config.version) {
     
     
 //index.js start
