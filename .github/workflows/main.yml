@@ -8,11 +8,10 @@ on:
 
 jobs:
   run-bot:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v4
 
     - name: Setup Node.js
@@ -20,8 +19,8 @@ jobs:
       with:
         node-version: 18.x
 
-    - name: Install dependencies
+    - name: Install all dependencies
       run: npm install
 
-    - name: Run the bot with Nodemon
-      run: nodemon index.js
+    - name: Run bot using npx nodemon
+      run: npx nodemon index.js
