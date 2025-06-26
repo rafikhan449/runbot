@@ -22,5 +22,8 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run index.js
+    - name: Fix nodemon permission
+      run: chmod +x ./node_modules/.bin/nodemon
+
+    - name: Run with nodemon
       run: npx nodemon index.js
