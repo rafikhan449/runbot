@@ -1,4 +1,4 @@
-name: Run Node.js with Nodemon
+name: Run Node.js
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  run-bot:
+  run:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +19,8 @@ jobs:
       with:
         node-version: 18.x
 
-    - name: Install all dependencies
+    - name: Install dependencies
       run: npm install
 
-    - name: Run bot using npx nodemon
-      run: npx nodemon index.js
+    - name: Run index.js
+      run: node index.js
