@@ -23,4 +23,4 @@ jobs:
       run: npm install
 
     - name: Run index.js
-      run: nodemon index.js
+      run: npx nodemon index.js
