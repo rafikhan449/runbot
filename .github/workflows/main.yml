@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Run Node.js with Nodemon
 
 on:
   push:
@@ -7,28 +7,21 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  run-bot:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x] 
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Setup Node.js ${{ matrix.node-version }}
+    - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18.x
 
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Run the bot with Nodemon
       run: npm start
-
-    - name: Start app (optional)
-      run: node index.js
